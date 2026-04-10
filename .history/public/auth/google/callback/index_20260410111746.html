@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Authenticating...</title></head>
+<body>
+<p>Signing you in...</p>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const state = params.get('state');
+  if (code && window.opener) {
+    window.opener.postMessage(
+      { type: 'google-oauth-callback', code, state },
+      window.location.origin
+    );
+    window.close();
+  } else {
+    document.body.innerHTML = '<p>Authentication failed. Please close this window.</p>';
+  }
+</script>
+</body>
+</html>
