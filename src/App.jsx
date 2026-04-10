@@ -29,7 +29,7 @@ function useIsMobile(breakpoint = 768) {
 /* ── AUTH CONTEXT (simple state management) ──────────── */
 // In production, use React Context or a state manager.
 // API_BASE should point to your FastAPI server
-const API_BASE = "http://localhost:8000";
+const API_BASE_URL = "https://france-cargo-backend-production.up.railway.app";
 
 async function apiCall(endpoint, options = {}) {
   const token = window.__authToken;
