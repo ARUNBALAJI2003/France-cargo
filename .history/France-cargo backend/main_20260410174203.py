@@ -1,7 +1,6 @@
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
-
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -58,6 +57,3 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-    # Serve React frontend
-if os.path.exists("build"):
-    app.mount("/", StaticFiles(directory="build", html=True), name="static")
