@@ -1,8 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs", "npm"]
+
 [phases.install]
-cmds = ["npm install --legacy-peer-deps", "chmod +x ./node_modules/.bin/react-scripts"]
+cmds = ["npm install"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["chmod +x ./node_modules/.bin/react-scripts && npm run build"]
 
 [start]
-cmd = "npx serve -s build -l $PORT"  
+cmd = "npx serve -s build -l $PORT"
