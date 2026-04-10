@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+=======
+[phases.setup]
+nixPkgs = ["nodejs", "npm"]
+
+>>>>>>> 77e54ba387fff0609c506797a344974c166032bb
+[phases.install]
+cmds = ["npm install"]
+
+[phases.build]
+<<<<<<< HEAD
+cmds = ["./node_modules/.bin/react-scripts build"]
+=======
+cmds = ["chmod +x ./node_modules/.bin/react-scripts && npm run build"]
+
+[start]
+cmd = "npx serve -s build -l $PORT"
+>>>>>>> 77e54ba387fff0609c506797a344974c166032bb
